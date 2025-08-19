@@ -1,0 +1,49 @@
+# Carbohydrate Calculator - Selenium + Cucumber + Extent (Maven)
+
+This project automates the first two test cases for https://www.calculator.net/carbohydrate-calculator.html
+
+## Tech
+- Java 11
+- Selenium 4
+- Cucumber JVM 7 (Gherkin)
+- JUnit 4 runner
+- Extent Reports (Spark) via `extentreports-cucumber7-adapter`
+- WebDriverManager (auto driver binaries)
+- Maven
+
+## Structure
+```
+src
+ ├─ test
+ │   ├─ java
+ │   │   ├─ com.example.framework    # DriverFactory, Hooks, PropertyLoader
+ │   │   ├─ com.example.app.pages    # Page Objects
+ │   │   └─ com.example.app.steps    # Step Definitions
+ │   │
+ │   └─ resources
+ │       ├─ features                 # .feature files
+ │       ├─ config.properties        # baseUrl, browser, waits
+ │       ├─ extent.properties        # Extent adapter settings
+ │       └─ extent-config.xml        # Extent look-and-feel
+ └─ pom.xml
+```
+
+## Scenarios
+1. **Load calculator page successfully**
+2. **Calculate with US units and default activity**
+
+## Run
+```bash
+mvn clean test
+```
+Reports:
+- Cucumber HTML: `target/cucumber-html/index.html`
+- Extent (Spark): `target/extent/spark.html`
+
+## Config
+- `config.properties`:
+  - `baseUrl=https://www.calculator.net/carbohydrate-calculator.html`
+  - `browser=chrome` (chrome|firefox|edge)
+  - `implicitWaitSec=5`
+
+> **Note:** Locators for the live site may need minor tweaks. Use browser devtools to confirm input IDs/names and adjust in `CarbohydrateCalculatorPage` if needed.

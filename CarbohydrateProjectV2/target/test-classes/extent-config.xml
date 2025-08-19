@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+  <configuration>
+    <reportName>Carbohydrate Calculator - UI Automation</reportName>
+    <documentTitle>Execution Report</documentTitle>
+    <theme>standard</theme>
+    <protocol>HTTPS</protocol>
+  </configuration>
+</extentreports>
